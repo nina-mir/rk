@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ross Katzenberg — Ink Drawings Made in Meditation</title>
+<meta name="description" content="Ross Katzenberg — hypnotic mandalas drawn in meditation. Original ink drawings on paper. San Francisco, CA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar" id="top">
+    <a href="#top" class="brand">RK</a>
+    <nav class="nav" id="nav">
+      <a href="#works">Works</a>
+      <a href="#statement">Statement</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <img src="images/art-04.jpeg" alt="" class="mandala mandala--hero spin" aria-hidden="true">
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="eyebrow">Ink on paper · Made in meditation</div>
+      <h1>ROSS<br>KATZENBERG</h1>
+      <p>Hypnotic mandalas drawn to trick the mind out of its identification with mind — and steal a glimpse of pure presence.</p>
+    </div>
+  </section>
+
+  <!-- ============ QUOTE BAND ============ -->
+  <section class="quote">
+    <img src="images/art-08.jpeg" alt="" class="mandala mandala--quote spin-r" aria-hidden="true">
+    <div class="quote__veil" aria-hidden="true"></div>
+    <div class="quote__inner">
+      <p>The buzzing sound of emptiness — the texture of the screen on which our lives are projected.</p>
+    </div>
+  </section>
+
+  <!-- ============ WORKS / TRIPTYCH ============ -->
+  <section class="works" id="works">
+    <div class="works__head">
+      <h2>Recent works</h2>
+      <span class="mono">↓ Scroll the field</span>
+    </div>
+    <div class="grid3">
+      <figure class="plate">
+        <img src="images/art-10.jpeg" alt="The Buzzing Sound of Emptiness" loading="lazy">
+        <figcaption>The Buzzing Sound of Emptiness</figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="images/art-03.jpeg" alt="Witness" loading="lazy">
+        <figcaption>Witness</figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="images/art-09.jpeg" alt="The Screen" loading="lazy">
+        <figcaption>The Screen</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT / STATEMENT ============ -->
+  <section class="about" id="statement">
+    <div class="about__emblem">
+      <img src="images/art-01.jpeg" alt="" class="mandala mandala--about spin-r" aria-hidden="true">
+    </div>
+    <div class="about__text">
+      <div class="mono label">About</div>
+      <p>I've been driven to create for as far back as I can remember. These designs are a byproduct of my journey of meditation — a dedication of hundreds of hours to the manifestation of a non-material world, and my own transformation in the moment.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <h3>Let's connect.</h3>
+    <div class="contact__links">
+      <a href="mailto:ross@katzenberg.com" class="contact__mail">ross@katzenberg.com</a>
+      <span>@rosskatzenberg</span>
+      <span>San Francisco, CA</span>
+    </div>
+    <div class="contact__foot mono">
+      <span>© 2024 Ross Katzenberg</span>
+      <span>This is our purpose</span>
+    </div>
+  </section>
+
+  <script>
+    // Mobile menu toggle
+    (function () {
+      var btn = document.getElementById('menuBtn');
+      var nav = document.getElementById('nav');
+      btn.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        btn.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          nav.classList.remove('open');
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+
+    // Respect reduced-motion: pause spins
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.spin, .spin-r').forEach(function (el) {
+        el.style.animation = 'none';
+      });
+    }
+  </script>
+</body>
+</html>
